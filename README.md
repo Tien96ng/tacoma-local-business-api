@@ -57,6 +57,14 @@ An API that functions as a current directory for Local Businesses from in Tacoma
 
 ---
 
+## _API Use Guide_
+
+<details>
+<summary> Open for full Guide </summary>
+</details>
+
+---
+
 ## _Known Bugs_ 🩹
 * No known bugs at this time (4/02/2021). Please contact a contributor to report any bugs found during use.
 
