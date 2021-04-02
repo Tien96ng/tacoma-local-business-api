@@ -8,10 +8,10 @@ using LocalBusiness.Models;
 
 namespace LocalBusiness
 {
-  public class Startup
+	public class Startup
   {
     public Startup(IConfiguration configuration)
-    {
+  	{
       Configuration = configuration;
     }
 
@@ -23,11 +23,11 @@ namespace LocalBusiness
 
       services.AddDbContext<LocalBusinessContext>(opt =>
         opt.UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
-    	services.AddControllers();
+      services.AddControllers();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+  	public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
       if (env.IsDevelopment())
       {
@@ -37,7 +37,6 @@ namespace LocalBusiness
       // app.UseHttpsRedirection();
 
       app.UseRouting();
-
       app.UseAuthorization();
 
       app.UseEndpoints(endpoints =>
@@ -45,5 +44,5 @@ namespace LocalBusiness
         endpoints.MapControllers();
       });
     }
-  }
+	}
 }

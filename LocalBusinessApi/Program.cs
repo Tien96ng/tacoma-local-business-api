@@ -22,5 +22,5 @@ namespace LocalBusiness
         {
           webBuilder.UseStartup<Startup>();
         });
-  }
+    }
 }
