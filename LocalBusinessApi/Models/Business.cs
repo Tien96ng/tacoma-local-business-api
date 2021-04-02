@@ -7,7 +7,7 @@ namespace LocalBusiness.Models
     public int BusinessId { get; set; }
 
     [Required]
-    [StringLength(150)]
+    [StringLength(255)]
     public string Name { get; set; }
 
     [Required]

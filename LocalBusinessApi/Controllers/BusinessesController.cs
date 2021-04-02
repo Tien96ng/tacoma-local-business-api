@@ -29,7 +29,7 @@ namespace LocalBusiness.Controllers
       return query.ToList();
     }
 
-    // GET: api/businesses/5
+    // GET: api/businesses/1
     [HttpGet("{id}")]
     public async Task<ActionResult<Business>> GetBusiness(int id)
     {

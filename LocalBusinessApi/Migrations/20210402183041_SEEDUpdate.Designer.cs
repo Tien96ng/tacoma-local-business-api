@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocalBusinessApi.Migrations
 {
     [DbContext(typeof(LocalBusinessContext))]
-    [Migration("20210402182013_Initial")]
-    partial class Initial
+    [Migration("20210402183041_SEEDUpdate")]
+    partial class SEEDUpdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,8 +36,8 @@ namespace LocalBusinessApi.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4");
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
@@ -58,7 +58,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "7104 6th Ave Tacoma WA 98406-1213",
                             Category = "Bakery",
                             Name = "The Art of Crunch",
-                            PhoneNumber = "(253)-720-6180",
+                            PhoneNumber = "2537206180",
                             WebsiteUrl = "http://www.theartofcrunch.com/"
                         },
                         new
@@ -67,7 +67,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "5101 Yacht Club Rd, Tacoma WA 98407-3154",
                             Category = "Coffee",
                             Name = "The Dancing Goats® Coffee Bar Point Ruston",
-                            PhoneNumber = "(253)-433-7926",
+                            PhoneNumber = "2534337926",
                             WebsiteUrl = "http://www.theartofcrunch.com/"
                         },
                         new
@@ -76,7 +76,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "c/o Serra House 6602 S Alaska St Tacoma WA 98408-1323",
                             Category = "Coffee",
                             Name = "The Coffee Oasis.com",
-                            PhoneNumber = "(253)-328-6127",
+                            PhoneNumber = "2533286127",
                             WebsiteUrl = "https://thecoffeeoasis.com/"
                         },
                         new
@@ -85,7 +85,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "2200 Mildred St W University Place WA 98466-6041",
                             Category = "Bowling",
                             Name = "Narrows Plaza Bowl",
-                            PhoneNumber = "(253)-565-1007",
+                            PhoneNumber = "2535651007",
                             WebsiteUrl = "https://www.narrowsplazabowl.com/"
                         },
                         new
@@ -94,7 +94,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "6323 6th Ave Tacoma WA 98406",
                             Category = "Bowling",
                             Name = "Tower Lanes",
-                            PhoneNumber = "(253)-564-8853",
+                            PhoneNumber = "2535648853",
                             WebsiteUrl = "https://www.towerlanes.net/"
                         },
                         new
@@ -103,7 +103,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "3806 N 26th St Tacoma WA 98407",
                             Category = "Bowling",
                             Name = "Chalet Bowl",
-                            PhoneNumber = "(253)-752-5200",
+                            PhoneNumber = "2537525200",
                             WebsiteUrl = "https://www.chaletbowl.com//"
                         },
                         new
@@ -112,7 +112,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "12505 Pacific Ave S Tacoma WA 98444",
                             Category = "Bowling",
                             Name = "Paradise Lanes Entertainment Center",
-                            PhoneNumber = "(253)-537-6012",
+                            PhoneNumber = "2535376012",
                             WebsiteUrl = "https://www.bowlatparadise.com/"
                         },
                         new
@@ -121,7 +121,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "902 129th St Ct E Tacoma WA 98445",
                             Category = "Bowling",
                             Name = "Double Dozen Bowling League",
-                            PhoneNumber = "(253)-536-0514",
+                            PhoneNumber = "2535360514",
                             WebsiteUrl = ""
                         },
                         new
@@ -130,7 +130,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "1911 Pacific Ave Tacoma WA 98402",
                             Category = "Coffee",
                             Name = "Anthem Coffee & Tea",
-                            PhoneNumber = "(253)-572-9705",
+                            PhoneNumber = "2535729705",
                             WebsiteUrl = "https://myanthemcoffee.com/"
                         },
                         new
@@ -139,7 +139,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "3918 6th Ave Tacoma WA 98406",
                             Category = "Coffee",
                             Name = "Valhalla Coffee Co.",
-                            PhoneNumber = "(253)-761-5116",
+                            PhoneNumber = "2537615116",
                             WebsiteUrl = "http://www.valhallacoffee.com/"
                         },
                         new
@@ -148,7 +148,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "2201 6th Ave Tacoma WA 98403",
                             Category = "Coffee",
                             Name = "Bluebeard Coffee Roasters",
-                            PhoneNumber = "(253)-272-5600",
+                            PhoneNumber = "2532725600",
                             WebsiteUrl = "https://bluebeardcoffee.com/"
                         },
                         new
@@ -157,7 +157,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "4918 Center St Tacoma WA 98409",
                             Category = "Coffee",
                             Name = "Gravity Coffee",
-                            PhoneNumber = "(253)-447-8740",
+                            PhoneNumber = "2534478740",
                             WebsiteUrl = "http://gccoffee.com/"
                         },
                         new
@@ -166,7 +166,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "1003 S 11th St Tacoma WA 98405",
                             Category = "Coffee",
                             Name = "Manifesto Coffee",
-                            PhoneNumber = "(253)-503-7161",
+                            PhoneNumber = "2535037161",
                             WebsiteUrl = "http://www.manifestocoffeeroasters.com/"
                         },
                         new
@@ -175,7 +175,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "817 Division Ave Tacoma WA 98403",
                             Category = "Coffee",
                             Name = "Cosmonaut Coffee Co",
-                            PhoneNumber = "(253)-254-5052",
+                            PhoneNumber = "2532545052",
                             WebsiteUrl = "https://coffeetacoma.com/"
                         },
                         new
@@ -184,7 +184,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "2601 N Proctor St #5225 Tacoma WA 98407",
                             Category = "Coffee",
                             Name = "Olympia Coffee Roasting",
-                            PhoneNumber = "(253)-433-3279",
+                            PhoneNumber = "2534333279",
                             WebsiteUrl = "https://www.olympiacoffee.com/pages/proctor-tacoma"
                         },
                         new
@@ -202,7 +202,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "1901 Jefferson Ave # B Tacoma WA 98402",
                             Category = "Coffee",
                             Name = "Metro Coffee",
-                            PhoneNumber = "(253)-627-8152",
+                            PhoneNumber = "2536278152",
                             WebsiteUrl = ""
                         },
                         new
@@ -220,7 +220,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "1102 A St #215 Tacoma WA 98402",
                             Category = "Coffee",
                             Name = "Lift Bridge Coffee",
-                            PhoneNumber = "(253)-326-1354",
+                            PhoneNumber = "2533261354",
                             WebsiteUrl = "https://www.courthousesquaretacoma.com/lift-bridge-coffee"
                         },
                         new
@@ -229,7 +229,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "919 N 2nd St Tacoma WA 98403",
                             Category = "Coffee",
                             Name = "Tacoma Java Company",
-                            PhoneNumber = "(253)-292-9194",
+                            PhoneNumber = "2532929194",
                             WebsiteUrl = "http://tacoma-java-company.edan.io/"
                         },
                         new
@@ -238,7 +238,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "764 Broadway Tacoma WA 98402",
                             Category = "Coffee",
                             Name = "Bostwick Cafe",
-                            PhoneNumber = "(253)-302-5296",
+                            PhoneNumber = "2533025296",
                             WebsiteUrl = "https://www.bostwickcafe.com/"
                         },
                         new
@@ -247,7 +247,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "1322 Fawcett Ave Tacoma WA 98402",
                             Category = "Coffee",
                             Name = "Honey Coffee + Kitchen",
-                            PhoneNumber = "(253)-507-7289",
+                            PhoneNumber = "2535077289",
                             WebsiteUrl = "https://www.almamatertacoma.com/honey-cafe"
                         },
                         new
@@ -256,7 +256,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "3121 S 38th St Tacoma WA 98409",
                             Category = "Coffee",
                             Name = "Martin Henry Espresso",
-                            PhoneNumber = "(253)-284-0523",
+                            PhoneNumber = "2532840523",
                             WebsiteUrl = "https://www.martinhenryespresso.com/"
                         },
                         new
@@ -265,7 +265,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "1102 S Yakima Ave, Tacoma, WA 98405",
                             Category = "Coffee",
                             Name = "Hilltop Coffee Bar & Cafe",
-                            PhoneNumber = "(253)-272-0112",
+                            PhoneNumber = "2532720112",
                             WebsiteUrl = "https://hilltopcoffeebarcafe.com/"
                         },
                         new
@@ -274,7 +274,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "2716 N 21st St Tacoma WA 98406",
                             Category = "Coffee",
                             Name = "Lander Coffee",
-                            PhoneNumber = "(253)-625-7843",
+                            PhoneNumber = "2536257843",
                             WebsiteUrl = "https://www.landercoffee.com//"
                         },
                         new
@@ -283,7 +283,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "4020 S 56th St Tacoma WA 98409",
                             Category = "Coffee",
                             Name = "Fox Hollow Coffee Shop",
-                            PhoneNumber = "(253)-475-0933",
+                            PhoneNumber = "2534750933",
                             WebsiteUrl = "http://fox-hollow-coffee-shop.edan.io/"
                         },
                         new
@@ -292,7 +292,7 @@ namespace LocalBusinessApi.Migrations
                             Address = " 5107 Grand Loop Tacoma WA 98407",
                             Category = "Coffee",
                             Name = "Jewel Box Cafe",
-                            PhoneNumber = "(253)-752-4863",
+                            PhoneNumber = "2537524863",
                             WebsiteUrl = "https://www.jewelboxcafeatruston.com/"
                         },
                         new
@@ -301,7 +301,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "1114 M.L.K. Jr Way Tacoma WA 98405",
                             Category = "Coffee",
                             Name = "Red Elm Cafe",
-                            PhoneNumber = "(253)-327-1791",
+                            PhoneNumber = "2533271791",
                             WebsiteUrl = "https://red-elm-cafe.square.site/"
                         },
                         new
@@ -310,7 +310,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "6450 Tacoma Mall Blvd Tacoma WA 98409",
                             Category = "Coffee",
                             Name = "Bella Latee",
-                            PhoneNumber = "(253) 472-1975",
+                            PhoneNumber = "(253) 4721975",
                             WebsiteUrl = "http://bella-latte.edan.io/"
                         },
                         new
@@ -319,7 +319,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "9115 S Tacoma Way Tacoma WA 98499",
                             Category = "Coffee",
                             Name = "Coffee Kitchen",
-                            PhoneNumber = "(253)-588-4191",
+                            PhoneNumber = "2535884191",
                             WebsiteUrl = ""
                         },
                         new
@@ -328,7 +328,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "618 N 1st St, Tacoma, WA 98403",
                             Category = "Coffee",
                             Name = "North Slope Coffee",
-                            PhoneNumber = "(253) 383-7277",
+                            PhoneNumber = "(253) 3837277",
                             WebsiteUrl = ""
                         });
                 });
