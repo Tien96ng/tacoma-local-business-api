@@ -12,6 +12,10 @@ namespace LocalBusiness.Models
 
     [Required]
     [StringLength(255)]
+    public string Category { get; set; }
+
+    [Required]
+    [StringLength(255)]
     public string Location { get; set; }
 
     [Required(ErrorMessage = "Phone number is required")]
