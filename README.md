@@ -63,9 +63,10 @@ An API that functions as a current directory for Local Businesses from in Tacoma
 ---
 
 ## _Future Updates_ 🛠
-* Additional UI
-* Have separate roles for admins and logged-in users. Only admins should be able to add, update and delete.
-* Add an order form that only logged-in users can access. A logged-in user should be able to create, read, update and delete their own order.
+* Add a RANDOM endpoint that randomly returns a business
+* Add API pagination.
+* Add API Versioning.
+* Add CORS to API
 
 ---
 
