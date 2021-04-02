@@ -33,7 +33,7 @@ namespace LocalBusiness.Controllers
     [HttpGet("{id}")]
     public async Task<ActionResult<Business>> GetBusiness(int id)
     {
-        var business = await _db.Business.FindAsync(id);
+        var business = await _db.Businesses.FindAsync(id);
 
         if (business == null)
         {
@@ -102,7 +102,7 @@ namespace LocalBusiness.Controllers
 
     private bool BusinessExists(int id)
     {
-      return _db.Businesses.Any(e => e.business == id);
+      return _db.Businesses.Any(e => e.BusinessId == id);
     }
   }
 }
