@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocalBusinessApi.Migrations
 {
     [DbContext(typeof(LocalBusinessContext))]
-    [Migration("20210403021559_SEEDData")]
-    partial class SEEDData
+    [Migration("20210403023932_SEED_Database")]
+    partial class SEED_Database
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

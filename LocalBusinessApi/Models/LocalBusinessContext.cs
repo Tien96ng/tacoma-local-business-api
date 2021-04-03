@@ -42,10 +42,6 @@ namespace LocalBusiness.Models
           new Business { BusinessId = 30, Name = "Coffee Kitchen", Category = "Coffee", Address = "9115 S Tacoma Way Tacoma WA 98499", PhoneNumber = "2535884191", WebsiteUrl = "" },
           new Business { BusinessId = 31, Name = "North Slope Coffee", Category = "Coffee", Address = "618 N 1st St, Tacoma, WA 98403", PhoneNumber = "(253) 3837277", WebsiteUrl = "" }
         );
-        // builder.Entity<User>()
-        // .HasData(
-        //   new User { Id = 1, FirstName = "Tien", LastName = "Nguyen", Username = "test", Password = "test" }
-        // );
     }
 
      public DbSet<Business> Businesses { get; set; }
