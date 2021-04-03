@@ -44,5 +44,5 @@ namespace LocalBusiness
         endpoints.MapControllers();
       });
     }
-	}
+  }
 }
