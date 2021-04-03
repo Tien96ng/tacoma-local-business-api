@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocalBusinessApi.Migrations
 {
     [DbContext(typeof(LocalBusinessContext))]
-    [Migration("20210402183041_SEEDUpdate")]
-    partial class SEEDUpdate
+    [Migration("20210403021559_SEEDData")]
+    partial class SEEDData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -331,6 +331,29 @@ namespace LocalBusinessApi.Migrations
                             PhoneNumber = "(253) 3837277",
                             WebsiteUrl = ""
                         });
+                });
+
+            modelBuilder.Entity("LocalBusiness.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

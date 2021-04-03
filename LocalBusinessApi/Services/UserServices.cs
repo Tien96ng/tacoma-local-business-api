@@ -21,24 +21,31 @@ namespace LocalBusiness.Services
   public class UserService : IUserService
   {
     // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-    private List<User> _users = new List<User>
-    {
-      new User { Id = 1, FirstName = "Test", LastName = "User", Username = "test", Password = "test" }
-    };
+    // private List<User> _users = new List<User>
+    // {
+    //   new User { Id = 1, FirstName = "Test", LastName = "User", Username = "test", Password = "test" }
+    // };
+
+    private readonly LocalBusinessContext _db;
 
     private readonly AppSettings _appSettings;
 
-    public UserService(IOptions<AppSettings> appSettings)
+    public UserService(IOptions<AppSettings> appSettings, LocalBusinessContext db)
     {
       _appSettings = appSettings.Value;
+      _db = db;
     }
 
     public AuthenticateResponse Authenticate(AuthenticateRequest model)
     {
-      var user = _users.SingleOrDefault(x => x.Username == model.Username && x.Password == model.Password);
+      var user = _db.Users.FirstOrDefault(x => x.Username == model.Username && x.Password == model.Password);
+      Console.WriteLine("USERNAME: " + user.FirstName);
 
       // return null if user not found
-      if (user == null) return null;
+      if (user == null) 
+      {
+        return null;
+      }
 
       // authentication successful so generate jwt token
       var token = generateJwtToken(user);
@@ -48,17 +55,17 @@ namespace LocalBusiness.Services
 
     public IEnumerable<User> GetAll()
     {
-      return _users;
+      return _db.Users;
     }
 
     public User GetById(int id)
     {
-      return _users.FirstOrDefault(x => x.Id == id);
+      return _db.Users.FirstOrDefault(x => x.Id == id);
     }
 
     // helper methods
 
-    private string generateJwtToken(User user)
+    private string generateJwtToken(User user)  
     {
       // generate token that is valid for 7 days
       var tokenHandler = new JwtSecurityTokenHandler();
@@ -66,7 +73,7 @@ namespace LocalBusiness.Services
       var tokenDescriptor = new SecurityTokenDescriptor
       {
         Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
-        Expires = DateTime.UtcNow.AddDays(7),
+        Expires = DateTime.UtcNow.AddHours(2),
         SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
       };
       var token = tokenHandler.CreateToken(tokenDescriptor);

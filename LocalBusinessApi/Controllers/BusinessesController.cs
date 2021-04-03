@@ -6,18 +6,22 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LocalBusiness.Models;
+using LocalBusiness.Services;
 
 namespace LocalBusiness.Controllers
 {
+  
   [Route("api/[controller]")]
   [ApiController]
   public class BusinessesController : ControllerBase
   {
     private readonly LocalBusinessContext _db;
+    private IUserService _userService;
 
-    public BusinessesController(LocalBusinessContext db)
+    public BusinessesController(LocalBusinessContext db, IUserService userService)
     {
       _db = db;
+      _userService = userService;
     }
 
     // GET api/businesses
@@ -45,6 +49,7 @@ namespace LocalBusiness.Controllers
 
     // PUT: api/businesses/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Business business)
     {
@@ -75,6 +80,7 @@ namespace LocalBusiness.Controllers
     }
 
     // POST: api/businesses
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<Business>> Post(Business business)
     {
@@ -85,6 +91,7 @@ namespace LocalBusiness.Controllers
     }
 
     // DELETE: api/businesses/5
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBusiness(int id)
     {
@@ -103,6 +110,17 @@ namespace LocalBusiness.Controllers
     private bool BusinessExists(int id)
     {
       return _db.Businesses.Any(e => e.BusinessId == id);
+    }
+
+    [HttpPost("authenticate")]
+    public IActionResult Authenticate(AuthenticateRequest model)
+    {
+      var response = _userService.Authenticate(model);
+
+      if (response == null)
+      return BadRequest(new { message = "Username or password is incorrect" });
+
+      return Ok(response);
     }
   }
 }
