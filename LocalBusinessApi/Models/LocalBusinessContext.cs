@@ -45,5 +45,6 @@ namespace LocalBusiness.Models
     }
 
      public DbSet<Business> Businesses { get; set; }
+     public DbSet<User> Users { get; set; }
   }
 }
