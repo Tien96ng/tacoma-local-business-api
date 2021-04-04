@@ -1,7 +1,8 @@
 # <div align="center"> **Tacoma Local Business API** </div>
-### An API that functions as a current directory for Local Businesses from in Tacoma, Washington.
+### <div align="center"> An API that functions as a current directory for Local Businesses from in Tacoma, Washington. </div>
 
- ### _Contributor(s) and Contact Info_
+
+### _Contributor(s) and Contact Info_ 
 > Tien Nguyen [GitHub](https://github.com/Tien96ng)
 
 ---
@@ -17,7 +18,7 @@
 ---
 
 ## _Description_ 📃
-An API that functions as a current directory for Local Businesses from in Tacoma, Washington. It utilizes RESTful principles and has integrated authentication to keep the API Read-Only for all users except administrators. The user is able to see the in-use version of the API when using Postman or any API Viewer.
+An API that functions as a current directory for Local Businesses from in Tacoma, Washington. It utilizes RESTful principles and has integrated authentication via JWT Bearer to keep the API Read-Only for all users except administrators. The user is able to see / use the GET method to fetch API JSON data when using Postman or any API Viewer.
 
 ---
 
