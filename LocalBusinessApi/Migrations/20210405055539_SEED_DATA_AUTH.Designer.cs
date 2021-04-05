@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocalBusinessApi.Migrations
 {
     [DbContext(typeof(LocalBusinessContext))]
-    [Migration("20210403023932_SEED_Database")]
-    partial class SEED_Database
+    [Migration("20210405055539_SEED_DATA_AUTH")]
+    partial class SEED_DATA_AUTH
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -310,7 +310,7 @@ namespace LocalBusinessApi.Migrations
                             Address = "6450 Tacoma Mall Blvd Tacoma WA 98409",
                             Category = "Coffee",
                             Name = "Bella Latee",
-                            PhoneNumber = "(253) 4721975",
+                            PhoneNumber = "2534721975",
                             WebsiteUrl = "http://bella-latte.edan.io/"
                         },
                         new
@@ -325,10 +325,37 @@ namespace LocalBusinessApi.Migrations
                         new
                         {
                             BusinessId = 31,
-                            Address = "618 N 1st St, Tacoma, WA 98403",
+                            Address = "618 N 1st St Tacoma, WA 98403",
                             Category = "Coffee",
                             Name = "North Slope Coffee",
-                            PhoneNumber = "(253) 3837277",
+                            PhoneNumber = "2533837277",
+                            WebsiteUrl = ""
+                        },
+                        new
+                        {
+                            BusinessId = 32,
+                            Address = "602 Fawcett Ave Tacoma WA 98402",
+                            Category = "Bakery",
+                            Name = "Corina Bakery",
+                            PhoneNumber = "2536275070",
+                            WebsiteUrl = "http://www.corinabakery.com/"
+                        },
+                        new
+                        {
+                            BusinessId = 33,
+                            Address = "1317 S 11th St Tacoma WA 98405",
+                            Category = "Bakery",
+                            Name = "Le Donut LLC",
+                            PhoneNumber = "2536275877",
+                            WebsiteUrl = ""
+                        },
+                        new
+                        {
+                            BusinessId = 34,
+                            Address = "3514 Pacific Ave Tacoma WA 98418",
+                            Category = "Bakery",
+                            Name = "Old times bakery",
+                            PhoneNumber = "2536255898",
                             WebsiteUrl = ""
                         });
                 });
@@ -354,6 +381,16 @@ namespace LocalBusinessApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FirstName = "Tien",
+                            LastName = "Nguyen",
+                            Password = "test",
+                            Username = "test"
+                        });
                 });
 #pragma warning restore 612, 618
         }
