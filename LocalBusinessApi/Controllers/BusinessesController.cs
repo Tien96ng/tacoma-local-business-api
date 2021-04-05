@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LocalBusiness.Models;
 using LocalBusiness.Services;
+using LocalBusiness.Interfaces;
 
 namespace LocalBusiness.Controllers
 {

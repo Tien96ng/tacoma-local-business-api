@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using LocalBusiness.Helpers;
 using LocalBusiness.Services;
 using LocalBusiness.Models;
+using LocalBusiness.Interfaces;
 
 namespace LocalBusiness
 {
