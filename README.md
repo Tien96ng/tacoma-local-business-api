@@ -72,8 +72,8 @@ An API that functions as a current directory for Local Businesses from in Tacoma
 2. Add the following query to the request as raw data in the Body tab:
 ```
 {
-    "UserName": "Admin",
-    "Password": "epicodus"
+    "UserName": "test",
+    "Password": "test"
 }
 ```
 3. The token will be generated in the response.
@@ -81,6 +81,18 @@ An API that functions as a current directory for Local Businesses from in Tacoma
 5. Switch to the **authorization** tab in Postman.
 6. Choose the type: **Bearer Token** and paste the copied Token into the **Token** field.
 7. Run a request for any authorize route request (Ex. POST, PUT, or DELETE).
+
+#### Sample Authenticate 200 OK Response
+```
+{
+    "id": 1,
+    "firstName": "Bob",
+    "lastName": "Belcher",
+    "username": "LindaStopYellingAtMe",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYmYiOjE2MTc2MDIyMDYsImV4cCI6MTYxNzYwOTQwNiwiaWF0IjoxNjE3NjAyMjA2fQ.a0sJc8sn3PXyp0DeOhmQ7lMtn4sNtlX92c13XG0Jf0M"
+}
+```
+
 
 ### Endpoints
 > Base URL: `https://localhost:5000`
