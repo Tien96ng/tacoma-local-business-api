@@ -87,11 +87,12 @@ An API that functions as a current directory for Local Businesses from in Tacoma
 
 #### HTTP Request Structure
 ```
-GET /api/businesses
-POST /api/businesses
-GET /api/businesses/{id}
-PUT /api/businesses/{id}
-DELETE /api/businesses/{id}
+GET /api/{component}
+POST /api/{component}
+GET /api/{component}/{id}
+PUT /api/{component}/{id}
+DELETE /api/{component}/{id}
+AUTHENTICATE /api/{component}/authenticate
 ```
 
 #### Example Query
@@ -102,12 +103,59 @@ https://localhost:5000/api/businesses/30
 #### Sample JSON Response
 ```
 {
-    "Id": 131,
-    "Name": "Spiced Cold Brew",
-    "Ingredient": "Cinnamon, Nutmeg, Cayenne",
-    "Recipe Text: "Coffee is the answer to all solutions in the known universe as proven by leading scientists.",
+  "businessId": 30,
+  "name": "Coffee Kitchen",
+  "category": "Coffee",
+  "address": "9115 S Tacoma Way Tacoma WA 98499",
+  "phoneNumber": "2535884191",
+  "websiteUrl": ""
 }
 ```
+..........................................................................................
+
+### Local Businesses in Tacoma
+> Access information on local businesses located in Tacoma, Washington.
+
+#### HTTP Request
+```
+GET /api/businesses
+POST /api/businesses
+GET /api/businesses/{id}
+PUT /api/businesses/{id}
+DELETE /api/businesses/{id}
+AUTHENTICATE /api/businesses/authenticate
+```
+
+#### Path Parameters
+| Parameter | Type | Default | Required | Description |
+| :---: | :---: | :---: | :---: | --- |
+| BusinessId | int | none | true | Returns the ID of the current business within the JSON.
+| Name | string | none | true | Return name of the business.
+| Category | string | none | true | Return category of the type of business.
+| Address | string | none | true | Return address of the business.
+| PhoneNumber | string | none | true | Return phone number of the business.
+| WebsiteUrl | string | none | false | Return website of the business.
+
+#### Example Query
+```
+https://localhost:5000/api/bean/?category=bakery
+```
+
+#### Sample JSON Response
+```
+[
+    {
+        "businessId": 1,
+        "name": "The Art of Crunch",
+        "category": "Bakery",
+        "address": "7104 6th Ave Tacoma WA 98406-1213",
+        "phoneNumber": "2537206180",
+        "websiteUrl": "http://www.theartofcrunch.com/"
+    }
+]
+```
+
+..........................................................................................
 
 </details>
 
