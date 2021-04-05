@@ -58,6 +58,57 @@ An API that functions as a current directory for Local Businesses from in Tacoma
 
 <details>
 <summary> Open for full Guide </summary>
+
+### Install Postman
+> (Optional) [Download and install Postman](https://www.postman.com/downloads/).
+
+### Launch the API
+1) Navigate to tacoma-local-business-api/LocalBusinessApi directory using the MacOS Terminal or Windows Powershell (e.g. **cd Desktop/tacoma-local-business-api/LocalBusinessApi**).
+2) Run the command **dotnet run** to have access to the API in Postman or browser.
+
+### Using the JSON Web Token
+> In order to be authorized to use the POST, PUT, DELETE functionality of the API, please authenticate yourself through Postman.
+1. Open Postman and create a POST request using the URL: `http://localhost:5000/api/businesses/authenticate`
+2. Add the following query to the request as raw data in the Body tab:
+```
+{
+    "UserName": "Admin",
+    "Password": "epicodus"
+}
+```
+3. The token will be generated in the response.
+4. Copy the Token from the response (2 hour TTL).
+5. Switch to the **authorization** tab in Postman.
+6. Choose the type: **Bearer Token** and paste the copied Token into the **Token** field.
+7. Run a request for any authorize route request (Ex. POST, PUT, or DELETE).
+
+### Endpoints
+> Base URL: `https://localhost:5000`
+
+#### HTTP Request Structure
+```
+GET /api/businesses
+POST /api/businesses
+GET /api/businesses/{id}
+PUT /api/businesses/{id}
+DELETE /api/businesses/{id}
+```
+
+#### Example Query
+```
+https://localhost:5000/api/businesses/30
+```
+
+#### Sample JSON Response
+```
+{
+    "Id": 131,
+    "Name": "Spiced Cold Brew",
+    "Ingredient": "Cinnamon, Nutmeg, Cayenne",
+    "Recipe Text: "Coffee is the answer to all solutions in the known universe as proven by leading scientists.",
+}
+```
+
 </details>
 
 ---
