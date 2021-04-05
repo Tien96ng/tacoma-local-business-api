@@ -26,9 +26,34 @@ namespace LocalBusiness.Controllers
 
     // GET api/businesses
     [HttpGet]
-    public ActionResult<IEnumerable<Business>> Get()
+    public ActionResult<IEnumerable<Business>> Get(string name, string category, string address, string phoneNumber, string websiteUrl)
     {
       var query = _db.Businesses.AsQueryable();
+
+      if (name != null)
+      {
+        query = query.Where(entry => entry.Name == name);
+      }
+
+      if (category != null)
+      {
+        query = query.Where(entry => entry.Category == category);
+      }
+
+      if (address != null)
+      {
+        query = query.Where(entry => entry.Name == name);
+      }
+
+      if (phoneNumber != null)
+      {
+        query = query.Where(entry => entry.PhoneNumber == phoneNumber);
+      }
+
+      if (websiteUrl != null)
+      {
+        query = query.Where(entry => entry.WebsiteUrl == websiteUrl);
+      }
 
       return query.ToList();
     }
