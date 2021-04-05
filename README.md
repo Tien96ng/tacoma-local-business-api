@@ -129,7 +129,6 @@ AUTHENTICATE /api/businesses/authenticate
 #### Path Parameters
 | Parameter | Type | Default | Required | Description |
 | :---: | :---: | :---: | :---: | --- |
-| BusinessId | int | none | true | Returns the ID of the current business within the JSON.
 | Name | string | none | true | Return name of the business.
 | Category | string | none | true | Return category of the type of business.
 | Address | string | none | true | Return address of the business.
